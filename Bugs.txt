@@ -1,0 +1,9 @@
+Student:
+
+-CourseSchedule kaldırıldı.
+-CalculateCourseSchedule fonksiyonu kaldırıldı.
+-PrintCourseSchedule fonksiyonu kaldırıldı
+
+
+Curriculum:
+**student sınıfından çağrılan printCurriculum da hata çıkacak.
