@@ -1,9 +1,26 @@
 Student:
-
 -CourseSchedule kaldırıldı.
 -CalculateCourseSchedule fonksiyonu kaldırıldı.
 -PrintCourseSchedule fonksiyonu kaldırıldı
+-GPA nasıl hesaplanıcak? Ağırlıklar nereden alınıcak?
+
+
+Instructor:
+-Courseschedule kaldırıldı.
 
 
 Curriculum:
 **student sınıfından çağrılan printCurriculum da hata çıkacak.
+
+
+Manager:
+-Manager nesnelerinin instructor ve isInstructor özellikleri kaldırıldı.
+
+
+Transcript:
+-Ne bok yicez?
+
+
+
+Geliştiricilere Not:
+-Yapacağımız projenin amk...
