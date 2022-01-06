@@ -36,7 +36,10 @@ void Course::setCredit(int C) {
     Credit = C;
 }
 
-ostream &operator <<(ostream &os, const Course Cr){
-    os << "Course: " << Cr.CourseCode << " " << Cr.CourseName << " Credit: " << Cr.Credit << endl;
-    return os;
+int Course::getSemester() {
+    return Semester;
+}
+
+void Course::setSemester(int S) {
+    Semester = S;
 }
