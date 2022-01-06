@@ -8,7 +8,7 @@ using namespace std;
 class Course {
 private:
     string CourseCode, CourseName;
-    int Credit, Hours, Semester;
+    int Credit, Semester;
 public:
     Course();
     Course(string Code, string Name, int Cr);
