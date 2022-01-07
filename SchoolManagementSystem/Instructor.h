@@ -17,7 +17,7 @@ private:
 public:
     Instructor();
     Instructor(const Instructor &ı);
-    Instructor(string n, string sn, string id, string F, string D, string C, unordered_map <string, Course> T, unordered_map <string, Student> A);
+    Instructor(string n, string sn, string id, string F, string D, string C);
     bool getIsAdvisor();
     void setIsAdvisor(bool I);
     string getFaculty();

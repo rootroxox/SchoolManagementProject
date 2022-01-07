@@ -13,15 +13,13 @@ Instructor::Instructor(const Instructor &ı) {
     CourseSchedule = ı.CourseSchedule;
 }
 
-Instructor::Instructor(string n, string sn, string id, string F, string D, string C, unordered_map <string, Course> T, unordered_map <string, Student> A){
+Instructor::Instructor(string n, string sn, string id, string F, string D, string C){
     setName(n);
     setSurName(sn);
     setID(id);
     Faculty = F;
     Department = D;
     CourseSchedule = C;
-    TaughtCourses = T;
-    AdvisedStudentList = A;
 }
 
 bool Instructor::getIsAdvisor() {
