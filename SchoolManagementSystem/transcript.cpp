@@ -1,13 +1,19 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <fstream>
+#include "iostream"
 #include "currıculum.h"
 #include "transcript.h"
 using namespace std;
 
 class Transcript
 {
+    transcript::Transcript()
+    {
+        gpa = "";
+    }
+    transcript::Transcript(double gpa_)
+    {
+        gpa = gpa_;
+    }
+
     double calculateGpa()
     {
         double point = 0;
@@ -60,7 +66,7 @@ class Transcript
         }
     }
 public:
-    void Transcript::getpga()
+    void transcript::getpga()
     {
         return gpa;
     }
@@ -68,54 +74,3 @@ public:
     {
         gpa = gpa_;
     }
-    /*double calculategpa()
-    {
-        double point = 0;
-        int count = 0;
-        map<string, string>::iterator it;
-        for (it = completedCourses.begin(); it != completedCourses.end(); ++it)
-        {
-            if (it -> second == "AA")
-            {
-                point += 100;
-            }
-            if (it -> second == "BA")
-            {
-                point += 89;
-            }
-            if (it -> second == "BB")
-            {
-                point += 84;
-            }
-            if (it -> second == "CB")
-            {
-                point += 79;
-            }
-            if (it -> second == "CC")
-            {
-                point += 69;
-            }
-            if (it -> second == "CD")
-            {
-                point += 59;
-            }
-            if (it -> second == "DD")
-            {
-                point += 49
-            }
-            if (it -> second == "FF")
-            {
-                point += 0;
-            }
-            count++;
-        }
-        gpa = point / count;
-        return gpa;
-    }
-    string printtranscript()
-    {
-        c
-        return completedCourses;
-    }*/
-
-}
