@@ -1,0 +1,79 @@
+﻿  Course.cpp
+  CourseNode.cpp
+  Curriculum.cpp
+  Instructor.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(16,13): error C3646: 'advisor': bilinmeyen geçersiz kılma belirticisi
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(16,20): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(24,101): error C2061: sözdizimi hatası: tanımlayıcı 'Instructor'
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(42,18): error C2061: sözdizimi hatası: tanımlayıcı 'Instructor'
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,13): error C3646: 'getAdvisor': bilinmeyen geçersiz kılma belirticisi
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,23): error C2059: sözdizimi hatası: '('
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,25): error C2238: ';' öncesinde beklenmeyen belirteçler
+  Main.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(16,13): error C3646: 'advisor': bilinmeyen geçersiz kılma belirticisi
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(16,20): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(24,101): error C2061: sözdizimi hatası: tanımlayıcı 'Instructor'
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(42,18): error C2061: sözdizimi hatası: tanımlayıcı 'Instructor'
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,13): error C3646: 'getAdvisor': bilinmeyen geçersiz kılma belirticisi
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,23): error C2059: sözdizimi hatası: '('
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Student.h(44,25): error C2238: ';' öncesinde beklenmeyen belirteçler
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(27,18): error C3861: 'createInstructorMap': tanımlayıcı bulunamadı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(28,14): error C3861: 'createCourseMap': tanımlayıcı bulunamadı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(30,2): error C3861: 'setInstructorsTaughtCourses': tanımlayıcı bulunamadı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(54,21): warning C4018: '<': imzalı/imzasız uyuşmazlığı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(55,10): warning C4018: '<': imzalı/imzasız uyuşmazlığı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(186,98): error C2661: 'Student::Student': hiçbir aşırı yüklenmiş işlev 7 bağımsız değişken almaz
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(194,21): warning C4018: '<': imzalı/imzasız uyuşmazlığı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(211,25): error C2374: 'myStudent': yeniden tanımlama; birden fazla başlatma
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(190): message : 'myStudent' bildirimine bakın
+  Manager.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,54): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+  RankCalculator.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,54): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\RankCalculator.cpp(27,20): warning C4018: '<': imzalı/imzasız uyuşmazlığı
+  Student.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(16,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,27): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(28,5): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,54): error C2065: 'Student': bildirimi yapılmamış tanımlayıcı
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2923: 'std::unordered_map': 'Student' geçerli bir şablon tür bağımsız değişkeni değil ('_Ty' parametresi için)
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29): message : 'Student' bildirimine bakın
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Instructor.h(29,32): error C2976: 'std::unordered_map': çok az sayıda şablon bağımsız değişkeni var
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\unordered_map(69): message : 'std::unordered_map' bildirimine bakın
+  Transcript.cpp
+  Kod Üretiliyor...

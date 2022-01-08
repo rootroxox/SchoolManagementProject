@@ -1,73 +1,62 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+//
+// Created by ayber on 7.01.2022.
+//
 
+#ifndef XX_STUDENT_H
+#define XX_STUDENT_H
 #include <string>
-#include <Instructor.h>
-#include <Transcript.h>
-#include <Curriculum.h>
 #include <vector>
+#include "User.h"
+#include "Transcript.h"
+#include <iostream>
 
-class Student : public User{
-protected:
-	double GPA;
-	int classLevel;
-	std::string faculty;
-	std::string department;
-	Instructor advisor;
-	int rank;
-	Transcript transcript;
-	Curriculum curriculum;
-	vector<Course> takenCourses;
+using namespace std;
+class Student : public User {
+private:
+    double GPA;
+    int classLevel;
+    string faculty;
+    string department;
+    int rank;
+    Transcript transcript;
+    vector<Course> curriculum;
+    vector<CourseNode> takenCourses;
 
 public:
-
-	Student(std::string name, std::string surname, std::string ID, int classLevel, std::string faculty, std::string department, int rank);
-
-	void setGPA(double);
-
-	double getGPA();
-
-	void setClassLevel(int);
-
-	int getClassLevel();
-
-	void setFaculty(std::string);
-
-	std::string getFaculty();
-
-	void setDepartment(std::string);
-
-	std::string getDepartment();
-
-	void setAdvisor(Instructor);
-
-	Instructor getAdvisor();
-
-	void setRank(int);
-
-	int getRank();
-
-	void setTranscript(Transcript);
-
-	Transcript getTranscript();
-
-	void setCurriculum(Curriculum);
-
-	Curriculum getCurriculum();
-
-	void setTakenCourses(vector<Course>);
-
-	vector<Course> getTakenCourses();
-
-	void printTranscript();
-
-	void printCurriculum();
-
-	void printTakenCourses();
-
-	bool enrollCourse(Course);
-
-	bool ejectCourse(Course);
+    Student();
+    Student(string name, string surname, string iD, int classLevel, string faculty, string department); //Instructor kaldýrdýk
+    Student(const Student& obj);
+    void setGPA(double gpa);
+    double getGPA();
+    void setClassLevel(int classLevel);
+    int getClassLevel();
+    void setFaculty(string faculty);
+    string getFaculty();
+    void setDepartment(string department);
+    string getDepartment();
+    //void setAdvisor(Instructor advisor);
+    //Instructor getAdvisor();
+    void setRank(int);
+    int getRank();
+    Transcript getTranscript();
+    void setCurriculum(vector<Course> curriculum);
+    vector<Course> getCurriculum();
+    vector<CourseNode> getTakenCourses();
+    void setTakenCourses(vector<CourseNode> takenCourses);
+    void setTranscript(Transcript transcript);
+    void showTranscript(Student student);
+    void showCurriculum(Student student);
+    void showTakenCourses(Student student);
+    vector<CourseNode> sortVector(vector<CourseNode> transcriptCourses);
+    vector<Course> sortVector(vector<Course> transcriptCourses);
+    void swap(CourseNode* xp, CourseNode* yp);
+    void swap(Course* xp, Course* yp);
+    void bubbleSort(vector<CourseNode> courseNodeList, int n);    
+    void bubbleSort(vector<Course> courseNodeList, int n);
+    friend ostream& operator<<(ostream& si, const Student& student);
+    //friend ostream& operator<<(ostream& sc, const Student& student);
+    friend ostream& operator<<(ostream& stc, const Student& student);
 };
 
-#endif // !STUDENT_H
+
+#endif //XX_STUDENT_H

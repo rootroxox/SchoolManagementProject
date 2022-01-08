@@ -1,0 +1,3 @@
+﻿  Main.cpp
+D:\Github Master Repository\ClassRepo\CENG241\Project\Project\Main.cpp(359): warning C4715: 'login': tüm denetim yolları değer döndürmez
+  Project.vcxproj -> D:\Github Master Repository\ClassRepo\CENG241\Project\Project\x64\Debug\Project.exe

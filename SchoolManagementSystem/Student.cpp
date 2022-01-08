@@ -1,130 +1,267 @@
-#include <iostream>
-#include "Student.h"
-#include <unordered_map>
+//
+// Created by ayber on 7.01.2022.
+//
 
-Student::Student(std::string name, std::string surname, std::string ID, int classLevel, std::string faculty, std::string department, int rank) {
-	this->name = name;
-	this->surname = surname;
-	this->ID = ID;
-	this->classLevel = classLevel;
-	this->faculty = faculty;
-	this->department = department;
-	this->rank = rank;
+#include "Student.h"
+#include "CourseNode.h"
+#include "Transcript.h"
+#include "User.h"
+#include "Instructor.h"
+#include <iostream>
+#include <iomanip>
+
+Student::Student() {
+
+}
+
+Student::Student(const Student& obj) {
+    this->setName(obj.Name);
+    this->setSurName(obj.SurName);
+    this->setID(obj.ID);
+    GPA = obj.GPA;
+    department = obj.department;
+    classLevel = obj.classLevel;
+    faculty = obj.faculty;
+    rank = obj.rank;
+    transcript = obj.transcript;
+    curriculum = obj.curriculum;
+    takenCourses = obj.takenCourses;
+}
+
+Student::Student(string name, string surname, string ID, int classLevel, string faculty, string department) { //Instructor kaldýrdýk
+    this->setName(name);
+    this->setSurName(surname);
+    this->setID(ID);
+    this->classLevel = classLevel;
+    this->faculty = faculty;
+    this->department = department;
+    //    this->advisor = advisor;
 }
 
 void Student::setGPA(double GPA) {
-	this->GPA = GPA;
+    this->GPA = GPA;
 }
 
 double Student::getGPA() {
-	return this->GPA;
+    return this->GPA;
 }
 
 void Student::setClassLevel(int classLevel) {
-	this->classLevel = classLevel;
+    this->classLevel = classLevel;
 }
 
 int Student::getClassLevel() {
-	return this->classLevel;
+    return this->classLevel;
 }
 
 void Student::setFaculty(std::string faculty) {
-	this->faculty = faculty;
+    this->faculty = faculty;
 }
 
 std::string Student::getFaculty() {
-	return this->faculty;
+    return this->faculty;
 }
 
 void Student::setDepartment(std::string department) {
-	this->department = department;
+    this->department = department;
 }
 
 std::string Student::getDepartment() {
-	return this->department;
+    return this->department;
 }
 
-void Student::setAdvisor(Instructor advisor) {
-	this->advisor = advisor;
-}
-
-Instructor Student::getAdvisor() {
-	return this->advisor;
-}
+//void Student::setAdvisor(Instructor advisor) {
+//    this->advisor = advisor;
+//}
+//
+//Instructor Student::getAdvisor() {
+//    return this->advisor;
+//}
 
 void Student::setRank(int rank) {
-	this->rank = rank;
+    this->rank = rank;
 }
 
 int Student::getRank() {
-	return this->rank;
+    return this->rank;
 }
 
 void Student::setTranscript(Transcript transcript) {
-	this->transcript = transcript;
+    this->setGPA(this->transcript.getGPA());
+    this->transcript = transcript;
 }
 
 Transcript Student::getTranscript() {
-	return this->transcript;
+    return this->transcript;
 }
 
-void Student::setCurriculum(Curriculum curriculum) {
-	this->curriculum = curriculum;
+void Student::setCurriculum(vector<Course> curriculum) {
+    this->curriculum = curriculum;
 }
 
-Curriculum Student::getCurriculum() {
-	return this->curriculum;
+vector<Course> Student::getCurriculum() {
+    return this->curriculum;
 }
 
-void Student::setTakenCourses(vector<Course> takenCourses) {
-	this->takenCourses = takenCourses;
+void Student::setTakenCourses(vector<CourseNode> takenCourses) {
+    this->takenCourses = takenCourses;
 }
 
-vector<Course> Student::getTakenCourses() {
-	return this->takenCourses;
+vector<CourseNode> Student::getTakenCourses() {
+    return this->takenCourses;
 }
 
-void Student::printTranscript() {
-	for (auto const& pair : this->getTranscript()->completedCourses) {
-		std::cout << "Course: " << pair.first->courseCode << " " << "Grade: " << pair.second << std::endl;
-	}
-}
-
-void Student::printCurriculum() {
-	std::cout << "Department: " << this->department << "\n" << std::endl;
-
-	for (auto const& pair : this->getCurriculum()->courseList) {
-		std::cout << "Course: " << pair.first->courseCode << " " << "Semester: " << pair.second << std::endl;
-	}
-}
-
-void Student::printTakenCourses() {
-	for (int i = 0; i < this->getTakenCourses().size(); i++) {
-		std::cout << "Course Code: " << this->getTakenCourses()[i].courseCode
-			<< "\nCourse Name: " << this->getTakenCourses()[i].courseName
-			<< "\nCredit: " << this->getTakenCourses()[i].credit
-			<< std::endl;
-
-		std::cout << std::endl;
-	}
+ostream& operator<<(ostream& si, const Student& student) {
+    si << "Name: " << student.Name << "\nSurname: " << student.SurName << "\nID: "
+        << student.ID << "\nClass: " << student.classLevel << "\nFaculty: "
+        << student.faculty << "\nDepartment: " << student.department << endl;
+    return si;
 }
 
 
-bool Student::enrollCourse(Course course) {
-	this->getTakenCourses().push_back(course);
+void Student::showCurriculum(Student student) {
+    vector<Course> transcriptCourses = student.getCurriculum();
+    vector<Course> sorted = student.sortVector(transcriptCourses);
 
-	if (std::find(this->getTakenCourses().begin(), this->getTakenCourses().end(), course) != this->getTakenCourses().end()) {
-		return true;
-	}
-	return false;
+    int defaultSemester = 1;
+    int oldSemester = 1;
+
+    system("cls");
+    cout << "Semester : " << 1 << endl;
+    for (int i = 0; i < sorted.size(); i++) {
+        cout << "\n";
+        int semester = sorted[i].getSemester();
+
+        if (semester == defaultSemester || semester == oldSemester) {
+            cout << "Course Code: " << sorted[i].getCourseCode() << "\nCourse Name: " << sorted[i].getCourseName()
+                << "\nCourse Credit: " << sorted[i].getCredit() << endl;
+        }
+        else {
+            cout << "-------------------------------------------------------------" << endl;
+            cout << "Semester : " << semester << endl;
+            cout << "Course Code: " << sorted[i].getCourseCode() << "\nCourse Name: " << sorted[i].getCourseName()
+                << "\nCourse Credit: " << sorted[i].getCredit() << endl;
+        }
+
+        oldSemester = semester;
+    }
 }
 
-bool Student::ejectCourse(Course course) {
-	this->getTakenCourses().erase(std::remove(this->getTakenCourses().begin(), this->getTakenCourses().end(), course), this->getTakenCourses().end());
+void Student::showTakenCourses(Student student) {
+    vector<CourseNode> takenCourses = student.getTakenCourses();
 
-	if (std::find(this->getTakenCourses().begin(), this->getTakenCourses().end(), course) != this->getTakenCourses().end()) {
-		return false;
-	}
-	return true;
+    system("cls");
+    for (int i = 0; i < takenCourses.size(); i++) {
+        cout << "Course Code: " << takenCourses[i].getCourse().getCourseCode() << "\nCourse Name: " << takenCourses[i].getCourse().getCourseName()
+             << "\nCourse Credit: " << takenCourses[i].getCourse().getCredit() << endl;
+        cout << "-------------------------------------------------------------" << endl;
+    }
 }
 
+//ostream& operator<<(ostream & sc, Student & student) {
+//    vector<Course> transcriptCourses = student.getCurriculum();
+//    vector<Course> sorted = student.sortVector(transcriptCourses);
+//
+//    int defaultSemester = 1;
+//    int oldSemester = 1;
+//
+//    system("cls");
+//    sc << "Semester : " << 1 << endl;
+//    for (int i = 0; i < sorted.size(); i++) {
+//        sc << "\n";
+//        int semester = sorted[i].getSemester();
+//
+//        if (semester == defaultSemester || semester == oldSemester) {
+//            sc << "Course Code: " << sorted[i].getCourseCode() << "\nCourse Name: " << sorted[i].getCourseName()
+//                << "\nCourse Credit: " << sorted[i].getCredit() << endl;
+//        }
+//        else {
+//            sc << "-------------------------------------------------------------" << endl;
+//            sc << "Semester : " << semester << endl;
+//            sc << "Course Code: " << sorted[i].getCourseCode() << "\nCourse Name: " << sorted[i].getCourseName()
+//                << "\nCourse Credit: " << sorted[i].getCredit() << endl;
+//        }
+//
+//        oldSemester = semester;
+//    }
+//
+//    sc << "\nGPA: " << setprecision(3) << student.getGPA() << "\n" << endl;
+//
+//    return sc;
+//}
+
+void Student::showTranscript(Student student) {
+    vector<CourseNode> transcriptCourses = student.getTranscript().getCompletedCourses();
+    vector<CourseNode> sorted = student.sortVector(transcriptCourses);
+
+    int defaultSemester = 1;
+    int oldSemester = 1;
+
+    system("cls");
+    cout << "Semester : " << 1 << endl;
+    for (int i = 0; i < sorted.size(); i++) {
+        cout << "\n";
+        int semester = sorted[i].getCourse().getSemester();
+
+        if (semester == defaultSemester || semester == oldSemester) {
+            cout << "Course Code: " << sorted[i].getCourse().getCourseCode() << "\nCourse Name: " << sorted[i].getCourse().getCourseName()
+                << "\nCourse Credit: " << sorted[i].getCourse().getCredit() << "\nPass Grade: " << sorted[i].getPassGrade() << endl;
+        }
+        else {
+            cout << "-------------------------------------------------------------" << endl;
+            cout << "Semester : " << semester << endl;
+            cout << "Course Code: " << sorted[i].getCourse().getCourseCode() << "\nCourse Name: " << sorted[i].getCourse().getCourseName()
+                << "\nCourse Credit: " << sorted[i].getCourse().getCredit() << "\nPass Grade: " << sorted[i].getPassGrade() << endl;
+        }
+        
+        oldSemester = semester;
+    }
+
+    cout << "\nGPA: " << setprecision(3) << student.getGPA() << "\n" << endl;
+}
+
+vector<CourseNode> Student::sortVector(vector<CourseNode> transcriptCourses) {
+    bubbleSort(transcriptCourses, transcriptCourses.size());
+
+    return transcriptCourses;
+
+}
+
+vector<Course> Student::sortVector(vector<Course> transcriptCourses) {
+    bubbleSort(transcriptCourses, transcriptCourses.size());
+
+    return transcriptCourses;
+
+}
+
+void Student::swap(CourseNode* xp, CourseNode* yp)
+{
+    CourseNode temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+void Student::bubbleSort(vector<CourseNode> courseNodeList, int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (courseNodeList[j].getCourse().getSemester() > courseNodeList[j+1].getCourse().getSemester())
+                swap(&courseNodeList[j], &courseNodeList[j+1]);
+}
+
+void Student::bubbleSort(vector<Course> courseNodeList, int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (courseNodeList[j].getSemester() > courseNodeList[j + 1].getSemester())
+                swap(&courseNodeList[j], &courseNodeList[j + 1]);
+}
+
+void Student::swap(Course* xp, Course* yp)
+{
+    Course temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
